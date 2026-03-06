@@ -1,3 +1,8 @@
+# Why?
+Because discord owners are idiots that are lazy and lack imagination, as do governments. Before you go full tilt, it's vibe coded... I know, shocked pikkachu, but I had the idea, alongside others. So those options were:
+* Get the gov't to force ISP's to utilize govt controlled DNS, in Canada that would be CIRA safe search, allowing individuals with the skills to change the dns at their whim, but overall removing ISP's from oversight and privitized snooping, alongside providing guardrails for individuals... this would have been much better and broader, but meh.
+* or this.... which is where discord themselves should have gone, if only CEO's weren't egotistical clowns. So here I am 
+
 # discordguard-lists
 
 Community-maintained filter lists for [DiscordGuard](https://github.com/YOUR_ORG/discordguard), a browser extension providing parental controls for Discord. Like AdGuard or uBlock Origin filter lists, these lists are decoupled from the extension itself so they can be updated independently by the community — blocking servers by ID, channel name patterns, and keywords across three strictness tiers: `child-safe`, `family-safe`, and `teen`.
