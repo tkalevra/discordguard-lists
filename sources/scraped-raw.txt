@@ -2,17 +2,20 @@
 # ============================================================
 # THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.
 #
-# Populated by: scripts/scraper.py
-# Source:       https://disboard.org (public server listings)
-#
-# The scraper targets servers tagged with adult/nsfw categories
-# on Disboard and writes entries here in AdGuard plaintext format.
-#
-# To regenerate this file, run:
-#   python scripts/scraper.py
-#
-# To compile the JSON filter lists after scraping, run:
-#   python scripts/compile-lists.py --target child-safe
-#   python scripts/compile-lists.py --target family-safe
-#   python scripts/compile-lists.py --target teen
+# Regenerate by running: python scripts/scraper.py
+# Compile into JSON:     python scripts/compile-lists.py --target <profile>
 # ============================================================
+
+! BEGIN SCRAPED
+! Scraped: 2026-03-06T15:40:13Z
+! Source: disboard.org
+! Tags scraped (hard-blocked): nsfw, adult, 18+, hentai, gore, explicit, porn, lewd, erotic, xxx
+! Tags scraped (teen-flagged): mature, suggestive, dating, relationship
+! Total servers: 0
+!
+! SECTION hard-blocked
+! Servers from hard-blocked tags — included in child-safe and family-safe lists
+!
+! SECTION teen-flagged
+! Servers from teen-flagged tags — included in teen list only
+! END SCRAPED
