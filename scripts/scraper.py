@@ -14,19 +14,11 @@ import re
 import sys
 import time
 import random
-import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    stream=sys.stderr,
-)
-log = logging.getLogger(__name__)
 
 OUTPUT_FILE = Path(__file__).parent.parent / "sources" / "scraped-raw.txt"
 
@@ -126,7 +118,7 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
 
     for page in range(1, max_pages + 1):
         url = f"{BASE_URL}/servers/tag/{tag}?page={page}"
-        log.info("tag=%-12r  page=%2d  %s", tag, page, url)
+        print(f"[scraper] tag={tag!r:<14}  page={page:2d}  {url}")
 
         try:
             soup = fetch_page(session, url)
@@ -141,7 +133,7 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
         cards = parse_server_cards(soup, tag)
 
         if not cards:
-            log.info("  → No server cards found — end of results for tag=%r", tag)
+            print(f"[scraper]   → no server cards found — end of results for tag={tag!r}")
             break
 
         for srv in cards:
@@ -150,11 +142,10 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
             else:
                 accumulated[srv.server_id] = srv
 
-        log.info("  → %d servers this page  (%d total for tag=%r)", len(cards), len(accumulated), tag)
+        print(f"[scraper]   → {len(cards)} servers this page  ({len(accumulated)} total for tag={tag!r})")
 
         # Rate limiting: 3–5 second random sleep between page requests
         delay = random.uniform(3.0, 5.0)
-        log.debug("Sleeping %.2fs", delay)
         time.sleep(delay)
 
     return list(accumulated.values())
@@ -232,10 +223,10 @@ def write_output(hard_servers: list[ScrapedServer], teen_servers: list[ScrapedSe
         new_content = header + scraped_block + "\n"
 
     OUTPUT_FILE.write_text(new_content, encoding="utf-8")
-    log.info(
-        "Wrote %d hard-blocked + %d teen-flagged = %d total servers to %s",
-        len(hard_servers), len(teen_servers), len(hard_servers) + len(teen_servers),
-        OUTPUT_FILE,
+    total = len(hard_servers) + len(teen_servers)
+    print(
+        f"[scraper] wrote {len(hard_servers)} hard-blocked + {len(teen_servers)} teen-flagged"
+        f" = {total} total servers to {OUTPUT_FILE}"
     )
 
 
@@ -244,7 +235,7 @@ def main() -> None:
 
     # Pass 1: hard-blocked tags → child-safe / family-safe
     hard_accumulated: dict[str, ScrapedServer] = {}
-    log.info("=== Pass 1: hard-blocked tags ===")
+    print("[scraper] === Pass 1: hard-blocked tags ===")
     for tag in HARD_BLOCKED_TAGS:
         for srv in scrape_tag(session, tag, MAX_PAGES_PER_TAG):
             if srv.server_id in hard_accumulated:
@@ -254,7 +245,7 @@ def main() -> None:
 
     # Pass 2: teen-flagged tags → teen list only
     teen_accumulated: dict[str, ScrapedServer] = {}
-    log.info("=== Pass 2: teen-flagged tags ===")
+    print("[scraper] === Pass 2: teen-flagged tags ===")
     for tag in TEEN_FLAGGED_TAGS:
         for srv in scrape_tag(session, tag, MAX_PAGES_PER_TAG):
             if srv.server_id in teen_accumulated:
@@ -266,8 +257,8 @@ def main() -> None:
     for sid in hard_accumulated:
         teen_accumulated.pop(sid, None)
 
-    log.info("Hard-blocked unique servers: %d", len(hard_accumulated))
-    log.info("Teen-flagged unique servers:  %d", len(teen_accumulated))
+    print(f"[scraper] hard-blocked unique servers: {len(hard_accumulated)}")
+    print(f"[scraper] teen-flagged unique servers:  {len(teen_accumulated)}")
 
     write_output(list(hard_accumulated.values()), list(teen_accumulated.values()))
 

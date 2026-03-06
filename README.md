@@ -5,7 +5,7 @@ Because discord owners are idiots that are lazy and lack imagination, as do gove
 
 # discordguard-lists
 
-Community-maintained filter lists for [DiscordGuard](https://github.com/YOUR_ORG/discordguard), a browser extension providing parental controls for Discord. Like AdGuard or uBlock Origin filter lists, these lists are decoupled from the extension itself so they can be updated independently by the community — blocking servers by ID, channel name patterns, and keywords across three strictness tiers: `child-safe`, `family-safe`, and `teen`.
+Community-maintained filter lists for [DiscordGuard](https://github.com/tkalevra/discordguard-lists), a browser extension providing parental controls for Discord. Like AdGuard or uBlock Origin filter lists, these lists are decoupled from the extension itself so they can be updated independently by the community — blocking servers by ID, channel name patterns, and keywords across three strictness tiers: `child-safe`, `family-safe`, and `teen`.
 
 ---
 
@@ -75,3 +75,26 @@ python scripts/compile-lists.py --target child-safe
 ```
 
 **Do not edit `lists/*.json` or `sources/scraped-raw.txt` directly** — both are generated files.
+
+---
+
+## Local Nightly Runner
+
+The scraper and compiler run locally via a systemd user timer rather than CI.
+
+```bash
+# Install systemd user units
+cp scripts/discordguard-lists.service ~/.config/systemd/user/
+cp scripts/discordguard-lists.timer ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now discordguard-lists.timer
+
+# Verify
+systemctl --user status discordguard-lists.timer
+
+# Manual trigger
+systemctl --user start discordguard-lists.service
+
+# Check logs
+journalctl --user -u discordguard-lists.service -f
+```

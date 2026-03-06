@@ -1,0 +1,10 @@
+[Unit]
+Description=DiscordGuard nightly list update
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Documents/013-GIT/discordguard-lists
+ExecStart=%h/Documents/013-GIT/discordguard-lists/scripts/run-nightly.sh
+StandardOutput=journal
+StandardError=journal
