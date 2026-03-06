@@ -3,7 +3,6 @@
   "updated": "2026-03-06",
   "description": "Strict child-safe filter list. Blocks all NSFW, adult, and age-inappropriate Discord servers, channels, and keywords.",
   "blocked_servers": [
-    "1386391060057555094",
     "1094827361052840007",
     "1023948172639405128",
     "987610234857634918",
