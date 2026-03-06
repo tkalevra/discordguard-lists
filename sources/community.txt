@@ -1,0 +1,83 @@
+# DiscordGuard Community Filter List
+# Format: AdGuard plaintext filter syntax
+# Maintained by: community contributors
+# Last updated: 2026-03-06
+#
+# ENTRY TYPES:
+#   ! comment line
+#   ||server:<snowflake_id>  — block a specific Discord server by ID
+#   ||category:<name>        — block channels matching this name/pattern
+#   ||keyword:<term>         — block messages/servers containing this keyword
+#
+# To contribute, open a PR adding entries to this file.
+# Run scripts/compile-lists.py to regenerate the JSON lists.
+
+! === BLOCKED SERVERS ===
+! Verified adult/NSFW community servers flagged by community reports
+
+||server:1094827361052840007
+||server:1023948172639405128
+||server:987610234857634918
+||server:1108374629041837056
+||server:1045928371640293847
+||server:1071829364058273910
+||server:999182736405928374
+||server:1033827461509283746
+||server:1089274610523847291
+||server:1062938471509283746
+
+! === BLOCKED CHANNEL NAME PATTERNS ===
+! Channels whose names match these patterns will be blocked
+
+||category:nsfw
+||category:adult
+||category:18+
+||category:18plus
+||category:explicit
+||category:gore
+||category:hentai
+||category:porn
+||category:lewd
+||category:erotic
+||category:xxx
+||category:r18
+||category:mature
+||category:suggestive
+||category:horny
+||category:feet
+||category:fetish
+||category:kink
+||category:thirst
+
+! === BLOCKED KEYWORDS ===
+! Messages or server descriptions containing these terms will be flagged
+
+||keyword:pornhub
+||keyword:onlyfans
+||keyword:fansly
+||keyword:nude
+||keyword:nudes
+||keyword:sex
+||keyword:cock
+||keyword:dick
+||keyword:pussy
+||keyword:boobs
+||keyword:tits
+||keyword:ass
+||keyword:cum
+||keyword:masturbat
+||keyword:orgasm
+||keyword:creampie
+||keyword:gangbang
+||keyword:blowjob
+||keyword:handjob
+||keyword:dildo
+||keyword:vibrator
+||keyword:rape
+||keyword:lolicon
+||keyword:shotacon
+||keyword:gore
+||keyword:guro
+||keyword:snuff
+||keyword:beastiality
+||keyword:zoophilia

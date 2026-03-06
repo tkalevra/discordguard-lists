@@ -1,0 +1,18 @@
+# DiscordGuard Scraped Raw Data
+# ============================================================
+# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.
+#
+# Populated by: scripts/scraper.py
+# Source:       https://disboard.org (public server listings)
+#
+# The scraper targets servers tagged with adult/nsfw categories
+# on Disboard and writes entries here in AdGuard plaintext format.
+#
+# To regenerate this file, run:
+#   python scripts/scraper.py
+#
+# To compile the JSON filter lists after scraping, run:
+#   python scripts/compile-lists.py --target child-safe
+#   python scripts/compile-lists.py --target family-safe
+#   python scripts/compile-lists.py --target teen
+# ============================================================

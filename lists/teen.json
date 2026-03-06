@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-03-06",
+  "description": "Teen filter list (13-17). Blocks explicitly pornographic, illegal, and harmful content while permitting general mature discussion, gaming communities, and age-appropriate social spaces.",
+  "blocked_servers": [
+    "1094827361052840007",
+    "1023948172639405128",
+    "987610234857634918",
+    "1108374629041837056",
+    "1045928371640293847"
+  ],
+  "blocked_channel_patterns": [
+    "nsfw",
+    "porn",
+    "hentai",
+    "explicit",
+    "gore",
+    "xxx",
+    "r18",
+    "18+",
+    "erotic"
+  ],
+  "blocked_keywords": [
+    "pornhub",
+    "onlyfans",
+    "fansly",
+    "nude",
+    "nudes",
+    "lolicon",
+    "shotacon",
+    "gore",
+    "guro",
+    "snuff",
+    "beastiality",
+    "zoophilia",
+    "rape",
+    "creampie",
+    "gangbang"
+  ]
+}
