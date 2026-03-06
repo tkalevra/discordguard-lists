@@ -5,16 +5,124 @@
 # Regenerate by running: python scripts/scraper.py
 # Compile into JSON:     python scripts/compile-lists.py --target <profile>
 # ============================================================
-
 ! BEGIN SCRAPED
-! Scraped: 2026-03-06T15:40:13Z
+! Scraped: 2026-03-06T15:48:56Z
 ! Source: disboard.org
 ! Tags scraped (hard-blocked): nsfw, adult, 18+, hentai, gore, explicit, porn, lewd, erotic, xxx
 ! Tags scraped (teen-flagged): mature, suggestive, dating, relationship
-! Total servers: 0
+! Total servers: 109
 !
 ! SECTION hard-blocked
 ! Servers from hard-blocked tags — included in child-safe and family-safe lists
+||server:1011845665086775296  ! name: unknown | tags: 18+
+||server:1087555015117377574  ! name: unknown | tags: 18+
+||server:1105167249494515752  ! name: unknown | tags: adult
+||server:1138522931765456896  ! name: unknown | tags: 18+
+||server:1202596029825024010  ! name: unknown | tags: adult
+||server:1236613746839781386  ! name: unknown | tags: 18+
+||server:1237988330948263936  ! name: unknown | tags: 18+
+||server:1293532989250211904  ! name: unknown | tags: 18+
+||server:1307165950822322226  ! name: unknown | tags: adult
+||server:1317382327843684393  ! name: unknown | tags: 18+
+||server:1328551717721083967  ! name: unknown | tags: 18+
+||server:1329058713641684992  ! name: unknown | tags: 18+
+||server:1361496939321102466  ! name: unknown | tags: nsfw
+||server:1369759769048645723  ! name: unknown | tags: nsfw
+||server:1380490386497208341  ! name: unknown | tags: nsfw
+||server:1380526247611863080  ! name: unknown | tags: nsfw
+||server:1380540033349451776  ! name: unknown | tags: nsfw
+||server:1380643139597107262  ! name: unknown | tags: nsfw
+||server:1393009876078170114  ! name: unknown | tags: adult
+||server:1394784435882299494  ! name: unknown | tags: adult
+||server:1394789197105336441  ! name: unknown | tags: adult
+||server:1394790943546278079  ! name: unknown | tags: adult
+||server:1394793605616636065  ! name: unknown | tags: adult
+||server:1402638269857923112  ! name: unknown | tags: nsfw
+||server:1405470271393104004  ! name: unknown | tags: nsfw
+||server:1406012342264659998  ! name: unknown | tags: 18+
+||server:1422982182426906626  ! name: unknown | tags: 18+
+||server:1425521573556916295  ! name: unknown | tags: 18+
+||server:1434158194455875676  ! name: unknown | tags: 18+
+||server:1441836646575116400  ! name: unknown | tags: 18+
+||server:1446925248845975674  ! name: unknown | tags: adult
+||server:1451887732388270184  ! name: unknown | tags: nsfw
+||server:1456134713243865284  ! name: unknown | tags: adult, nsfw
+||server:1456165046416834592  ! name: unknown | tags: 18+
+||server:1456260898040578196  ! name: unknown | tags: nsfw
+||server:1456302137448595540  ! name: unknown | tags: adult, nsfw
+||server:1457205100907991112  ! name: unknown | tags: nsfw
+||server:1460555144491044993  ! name: unknown | tags: adult
+||server:1460560886724034644  ! name: unknown | tags: adult
+||server:1460599279407206491  ! name: unknown | tags: nsfw
+||server:1460790050093535346  ! name: unknown | tags: nsfw
+||server:1460811226308411573  ! name: unknown | tags: adult
+||server:1460823672993353750  ! name: unknown | tags: adult
+||server:1460827112998043877  ! name: unknown | tags: adult
+||server:1460833099821617166  ! name: unknown | tags: adult
+||server:1460836488236503133  ! name: unknown | tags: adult
+||server:1460837477836128330  ! name: unknown | tags: adult
+||server:1460850713541476373  ! name: unknown | tags: adult
+||server:1462275322471907440  ! name: unknown | tags: nsfw
+||server:1462275760973811932  ! name: unknown | tags: nsfw
+||server:1462276112603287575  ! name: unknown | tags: nsfw
+||server:1462276183688483097  ! name: unknown | tags: nsfw
+||server:1462361381784260680  ! name: unknown | tags: nsfw
+||server:1465923776247103540  ! name: unknown | tags: 18+
+||server:1467643393827016957  ! name: unknown | tags: 18+
+||server:1467994260404965387  ! name: unknown | tags: 18+
+||server:1469066046987178205  ! name: unknown | tags: adult
+||server:1469066620508049639  ! name: unknown | tags: adult
+||server:1469078755191427268  ! name: unknown | tags: adult, nsfw
+||server:1469087081325265080  ! name: unknown | tags: adult
+||server:1469109401133781256  ! name: unknown | tags: adult
+||server:1469109853107523736  ! name: unknown | tags: adult
+||server:1469110365567717470  ! name: unknown | tags: adult
+||server:1469134587136442472  ! name: unknown | tags: adult, nsfw
+||server:1469170894227111999  ! name: unknown | tags: nsfw
+||server:1469185522042929166  ! name: unknown | tags: nsfw
+||server:1469190138545573921  ! name: unknown | tags: nsfw
+||server:1469195444411302003  ! name: unknown | tags: nsfw
+||server:1469201132671996102  ! name: unknown | tags: nsfw
+||server:1469213406971166722  ! name: unknown | tags: nsfw
+||server:1469215909997711414  ! name: unknown | tags: nsfw
+||server:1469231123295895595  ! name: unknown | tags: nsfw
+||server:1469342773797716143  ! name: unknown | tags: nsfw
+||server:1469379865437536338  ! name: unknown | tags: nsfw
+||server:1469388523835756587  ! name: unknown | tags: nsfw
+||server:1469398083451490337  ! name: unknown | tags: nsfw
+||server:1469451599972798597  ! name: unknown | tags: nsfw
+||server:1469833750719500504  ! name: unknown | tags: nsfw
+||server:1469840912275472396  ! name: unknown | tags: nsfw
+||server:1469862371924115498  ! name: unknown | tags: nsfw
+||server:1469975846629540098  ! name: unknown | tags: nsfw
+||server:1471790771387498603  ! name: unknown | tags: nsfw
+||server:1471860271885717506  ! name: unknown | tags: nsfw
+||server:1472089833835860001  ! name: unknown | tags: nsfw
+||server:1472095738774290666  ! name: unknown | tags: nsfw
+||server:1472100012619071652  ! name: unknown | tags: nsfw
+||server:1473079555437760734  ! name: unknown | tags: 18+
+||server:1473464907013030021  ! name: unknown | tags: nsfw
+||server:1473647323115425876  ! name: unknown | tags: nsfw
+||server:1474826015695048736  ! name: unknown | tags: nsfw
+||server:1474826262114734280  ! name: unknown | tags: nsfw
+||server:1474826500917428417  ! name: unknown | tags: nsfw
+||server:1474826544391393330  ! name: unknown | tags: nsfw
+||server:1474845582639108126  ! name: unknown | tags: nsfw
+||server:1475035061765279795  ! name: unknown | tags: 18+
+||server:1477019936588169236  ! name: unknown | tags: adult
+||server:1477172649019838546  ! name: unknown | tags: nsfw
+||server:1478442087103074347  ! name: unknown | tags: nsfw
+||server:1478567333671993527  ! name: unknown | tags: nsfw
+||server:1478629786640453756  ! name: unknown | tags: nsfw
+||server:1478827436476072081  ! name: unknown | tags: nsfw
+||server:1479082624667353161  ! name: unknown | tags: nsfw
+||server:745232582127517777  ! name: unknown | tags: 18+
+||server:783183900670558259  ! name: unknown | tags: nsfw
+||server:796786803990200321  ! name: unknown | tags: nsfw
+||server:852936763566981190  ! name: unknown | tags: 18+
+||server:858825204348485692  ! name: unknown | tags: nsfw
+||server:946183779507122176  ! name: unknown | tags: 18+
+||server:992552408012046419  ! name: unknown | tags: 18+
 !
 ! SECTION teen-flagged
 ! Servers from teen-flagged tags — included in teen list only
