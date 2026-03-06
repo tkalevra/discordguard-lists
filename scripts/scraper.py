@@ -121,7 +121,7 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
         print(f"[scraper] tag={tag!r:<14}  page={page:2d}  {url}")
 
         for attempt in range(2):
-            response = requests.get(url, headers=HEADERS, timeout=15)
+            response = session.get(url, headers=HEADERS, timeout=15)
             if response.status_code == 429:
                 wait = 60 + random.uniform(10, 20)
                 print(f'[scraper] HTTP 429 on {url} — waiting {wait:.0f}s before retry')
@@ -180,7 +180,7 @@ def build_scraped_block(
 
     for srv in sorted(hard_servers, key=lambda s: s.server_id):
         tag_str = ", ".join(sorted(srv.tags))
-        clean_name = srv.name.replace("\n", " ").strip() or "unknown"
+        clean_name = ''.join(c for c in srv.name if c.isprintable()).replace('\n', ' ').replace('\r', ' ').strip() or "unknown"
         lines.append(f"||server:{srv.server_id}  ! name: {clean_name} | tags: {tag_str}")
 
     lines += [
@@ -191,7 +191,7 @@ def build_scraped_block(
 
     for srv in sorted(teen_servers, key=lambda s: s.server_id):
         tag_str = ", ".join(sorted(srv.tags))
-        clean_name = srv.name.replace("\n", " ").strip() or "unknown"
+        clean_name = ''.join(c for c in srv.name if c.isprintable()).replace('\n', ' ').replace('\r', ' ').strip() or "unknown"
         lines.append(f"||server:{srv.server_id}  ! name: {clean_name} | tags: {tag_str}")
 
     lines.append("! END SCRAPED")

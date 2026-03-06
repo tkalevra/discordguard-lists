@@ -18,6 +18,6 @@ git add lists/ sources/scraped-raw.txt
 git diff --staged --quiet && echo "[discordguard] no changes, skipping commit" && exit 0
 
 git commit -m "chore: nightly list update $(date -u +%Y-%m-%d)"
-git push
+git push origin main
 
 echo "[discordguard] done"
