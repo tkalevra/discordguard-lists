@@ -120,15 +120,23 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
         url = f"{BASE_URL}/servers/tag/{tag}?page={page}"
         print(f"[scraper] tag={tag!r:<14}  page={page:2d}  {url}")
 
-        try:
-            soup = fetch_page(session, url)
-        except Exception as exc:
-            print(f"[scraper] Unexpected error on {url}: {exc}", file=sys.stderr)
+        for attempt in range(2):
+            response = requests.get(url, headers=HEADERS, timeout=15)
+            if response.status_code == 429:
+                wait = 60 + random.uniform(10, 20)
+                print(f'[scraper] HTTP 429 on {url} — waiting {wait:.0f}s before retry')
+                time.sleep(wait)
+                continue
+            break
+        else:
+            print(f'[scraper] HTTP 429 persists on {url} — skipping')
+            continue
+
+        if response.status_code == 403:
+            print(f'[scraper] 403 on {url} — skipping tag')
             break
 
-        if soup is None:
-            # 403 or unrecoverable error — skip remaining pages for this tag
-            break
+        soup = BeautifulSoup(response.text, "html.parser")
 
         cards = parse_server_cards(soup, tag)
 
@@ -144,8 +152,8 @@ def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[Scra
 
         print(f"[scraper]   → {len(cards)} servers this page  ({len(accumulated)} total for tag={tag!r})")
 
-        # Rate limiting: 3–5 second random sleep between page requests
-        delay = random.uniform(3.0, 5.0)
+        # Rate limiting: 8–15 second random sleep between page requests
+        delay = random.uniform(8, 15)
         time.sleep(delay)
 
     return list(accumulated.values())
@@ -233,6 +241,8 @@ def write_output(hard_servers: list[ScrapedServer], teen_servers: list[ScrapedSe
 def main() -> None:
     session = requests.Session()
 
+    print(f'[scraper] estimated runtime: ~{(len(HARD_BLOCKED_TAGS) + len(TEEN_FLAGGED_TAGS)) * MAX_PAGES_PER_TAG * 12 // 60} minutes at current rate limits')
+
     # Pass 1: hard-blocked tags → child-safe / family-safe
     hard_accumulated: dict[str, ScrapedServer] = {}
     print("[scraper] === Pass 1: hard-blocked tags ===")
@@ -242,6 +252,7 @@ def main() -> None:
                 hard_accumulated[srv.server_id].tags.update(srv.tags)
             else:
                 hard_accumulated[srv.server_id] = srv
+        time.sleep(random.uniform(20, 40))
 
     # Pass 2: teen-flagged tags → teen list only
     teen_accumulated: dict[str, ScrapedServer] = {}
@@ -252,6 +263,7 @@ def main() -> None:
                 teen_accumulated[srv.server_id].tags.update(srv.tags)
             else:
                 teen_accumulated[srv.server_id] = srv
+        time.sleep(random.uniform(20, 40))
 
     # Servers already in the hard list should not appear separately in teen
     for sid in hard_accumulated:
