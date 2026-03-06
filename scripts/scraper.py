@@ -2,17 +2,20 @@
 """
 scraper.py — Scrape Disboard.org for adult/NSFW-tagged Discord servers.
 
-Writes results to sources/scraped-raw.txt in AdGuard plaintext filter format.
+Writes results to sources/scraped-raw.txt in AdGuard plaintext filter format,
+wrapped in ! BEGIN SCRAPED / ! END SCRAPED markers so compile-lists.py can
+replace only the scraped section without touching manually maintained entries.
+
 Run from the repo root:
     python scripts/scraper.py
 """
 
 import re
+import sys
 import time
 import random
 import logging
-import argparse
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -21,154 +24,252 @@ from bs4 import BeautifulSoup
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
+    stream=sys.stderr,
 )
 log = logging.getLogger(__name__)
 
 OUTPUT_FILE = Path(__file__).parent.parent / "sources" / "scraped-raw.txt"
 
 BASE_URL = "https://disboard.org"
-SEARCH_TAGS = ["nsfw", "adult", "18+", "hentai", "explicit"]
-MAX_PAGES_PER_TAG = 5
+MAX_PAGES_PER_TAG = 10  # 24 servers/page → ~240 servers/tag max
+
+# Pass 1: feed child-safe and family-safe lists
+HARD_BLOCKED_TAGS = [
+    "nsfw", "adult", "18+", "hentai", "gore",
+    "explicit", "porn", "lewd", "erotic", "xxx",
+]
+
+# Pass 2: feed teen list (flagged, not hard-blocked)
+TEEN_FLAGGED_TAGS = ["mature", "suggestive", "dating", "relationship"]
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 "
-        "DiscordGuardBot/1.0 (+https://github.com/YOUR_ORG/discordguard-lists)"
-    ),
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0",
     "Accept-Language": "en-US,en;q=0.9",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "DNT": "1",
 }
 
-# Disboard server invite URLs contain the server ID in the path after /server/join/
-SERVER_ID_RE = re.compile(r"/server/join/(\d{17,19})")
-# Also try direct server page links
-SERVER_PAGE_RE = re.compile(r"/servers?/(\d{17,19})")
+# Matches /server/<snowflake> — Disboard server page links
+SERVER_HREF_RE = re.compile(r"^/server/(\d{17,19})(?:/|$)")
+
+
+class ScrapedServer:
+    __slots__ = ("server_id", "name", "tags")
+
+    def __init__(self, server_id: str, name: str, tags: set[str]):
+        self.server_id = server_id
+        self.name = name
+        self.tags = tags
 
 
 def fetch_page(session: requests.Session, url: str) -> BeautifulSoup | None:
-    """Fetch a URL and return a BeautifulSoup object, or None on error."""
+    """Fetch a URL and return a BeautifulSoup object, or None on any error."""
     try:
-        resp = session.get(url, headers=HEADERS, timeout=15)
+        resp = session.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code == 403:
+            print(f"[scraper] 403 Cloudflare block on {url} — skipping tag", file=sys.stderr)
+            return None
         resp.raise_for_status()
         return BeautifulSoup(resp.text, "html.parser")
     except requests.HTTPError as exc:
-        log.warning("HTTP error fetching %s: %s", url, exc)
+        print(f"[scraper] HTTP {exc.response.status_code} on {url}", file=sys.stderr)
     except requests.RequestException as exc:
-        log.warning("Request failed for %s: %s", url, exc)
+        print(f"[scraper] Request failed for {url}: {exc}", file=sys.stderr)
     return None
 
 
-def extract_server_ids(soup: BeautifulSoup) -> set[str]:
-    """Extract Discord server IDs from a Disboard listing page."""
-    ids: set[str] = set()
+def parse_server_cards(soup: BeautifulSoup, scraped_tag: str) -> list[ScrapedServer]:
+    """Extract server info from all cards on a Disboard listing page."""
+    results: dict[str, ScrapedServer] = {}
 
     for a in soup.find_all("a", href=True):
-        href = a["href"]
-        m = SERVER_ID_RE.search(href) or SERVER_PAGE_RE.search(href)
-        if m:
-            ids.add(m.group(1))
+        m = SERVER_HREF_RE.match(a["href"])
+        if not m:
+            continue
 
-    return ids
+        server_id = m.group(1)
+        if server_id in results:
+            continue
+
+        # Walk up to the server card container to grab name + tags
+        card = a.find_parent(class_=lambda c: c and "server" in " ".join(c).lower()) if a else None
+
+        name = "unknown"
+        if card:
+            name_el = card.find(class_=lambda c: c and "name" in " ".join(c).lower())
+            if name_el:
+                name = name_el.get_text(strip=True)[:80]
+        if name == "unknown":
+            text = a.get_text(separator=" ", strip=True)
+            if text:
+                name = text[:80]
+
+        card_tags: set[str] = {scraped_tag}
+        if card:
+            for tag_el in card.find_all(class_=lambda c: c and "tag" in " ".join(c).lower()):
+                t = tag_el.get_text(strip=True).lower()
+                if t and len(t) < 40:
+                    card_tags.add(t)
+
+        results[server_id] = ScrapedServer(server_id=server_id, name=name, tags=card_tags)
+
+    return list(results.values())
 
 
-def extract_tags(soup: BeautifulSoup) -> list[str]:
-    """Extract category/tag names visible on the listing page."""
-    tags: list[str] = []
-    for tag_el in soup.select(".server-tag, .tag, [class*='tag']"):
-        text = tag_el.get_text(strip=True).lower()
-        if text:
-            tags.append(text)
-    return tags
-
-
-def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> dict[str, set[str]]:
-    """Scrape Disboard for servers with the given tag. Returns {server_id: {tags}}."""
-    results: dict[str, set[str]] = {}
+def scrape_tag(session: requests.Session, tag: str, max_pages: int) -> list[ScrapedServer]:
+    """
+    Scrape Disboard for servers listed under `tag`.
+    URL pattern: https://disboard.org/servers/tag/<tag>?page=<n>
+    Returns up to max_pages * ~24 servers.
+    """
+    accumulated: dict[str, ScrapedServer] = {}
 
     for page in range(1, max_pages + 1):
-        url = f"{BASE_URL}/servers/tag/{tag}/{page}"
-        log.info("Fetching tag=%r page=%d — %s", tag, page, url)
+        url = f"{BASE_URL}/servers/tag/{tag}?page={page}"
+        log.info("tag=%-12r  page=%2d  %s", tag, page, url)
 
-        soup = fetch_page(session, url)
+        try:
+            soup = fetch_page(session, url)
+        except Exception as exc:
+            print(f"[scraper] Unexpected error on {url}: {exc}", file=sys.stderr)
+            break
+
         if soup is None:
+            # 403 or unrecoverable error — skip remaining pages for this tag
             break
 
-        # Stop if Disboard returns an empty/no-results page
-        server_cards = soup.select(".server-listing, .server-card, [class*='server']")
-        if not server_cards:
-            log.info("No server cards found on page %d for tag %r, stopping.", page, tag)
+        cards = parse_server_cards(soup, tag)
+
+        if not cards:
+            log.info("  → No server cards found — end of results for tag=%r", tag)
             break
 
-        ids = extract_server_ids(soup)
-        page_tags = extract_tags(soup)
+        for srv in cards:
+            if srv.server_id in accumulated:
+                accumulated[srv.server_id].tags.update(srv.tags)
+            else:
+                accumulated[srv.server_id] = srv
 
-        for sid in ids:
-            results.setdefault(sid, set()).update(page_tags)
-            results[sid].add(tag)
+        log.info("  → %d servers this page  (%d total for tag=%r)", len(cards), len(accumulated), tag)
 
-        log.info("  → Found %d server IDs on this page.", len(ids))
-
-        # Rate limiting: 1–2 second random delay between requests
-        delay = random.uniform(1.0, 2.0)
+        # Rate limiting: 3–5 second random sleep between page requests
+        delay = random.uniform(3.0, 5.0)
         log.debug("Sleeping %.2fs", delay)
         time.sleep(delay)
 
-    return results
+    return list(accumulated.values())
 
 
-def write_output(results: dict[str, set[str]]) -> None:
-    """Write scraped results to sources/scraped-raw.txt in AdGuard plaintext format."""
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-
+def build_scraped_block(
+    hard_servers: list[ScrapedServer],
+    teen_servers: list[ScrapedServer],
+    timestamp: str,
+) -> str:
+    """Return the full ! BEGIN SCRAPED ... ! END SCRAPED block as a string."""
+    total = len(hard_servers) + len(teen_servers)
     lines = [
-        "# DiscordGuard Scraped Raw Data",
-        "# ============================================================",
-        "# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.",
-        "#",
-        f"# Generated: {datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}",
-        "# Source:    https://disboard.org (public server listings)",
-        "# Script:    scripts/scraper.py",
-        "# ============================================================",
-        "",
-        "! === SCRAPED BLOCKED SERVERS ===",
+        "! BEGIN SCRAPED",
+        f"! Scraped: {timestamp}",
+        "! Source: disboard.org",
+        f"! Tags scraped (hard-blocked): {', '.join(HARD_BLOCKED_TAGS)}",
+        f"! Tags scraped (teen-flagged): {', '.join(TEEN_FLAGGED_TAGS)}",
+        f"! Total servers: {total}",
+        "!",
+        "! SECTION hard-blocked",
+        "! Servers from hard-blocked tags — included in child-safe and family-safe lists",
     ]
 
-    for server_id, tags in sorted(results.items()):
-        tag_str = ", ".join(sorted(tags))
-        lines.append(f"! tags: {tag_str}")
-        lines.append(f"||server:{server_id}")
+    for srv in sorted(hard_servers, key=lambda s: s.server_id):
+        tag_str = ", ".join(sorted(srv.tags))
+        clean_name = srv.name.replace("\n", " ").strip() or "unknown"
+        lines.append(f"||server:{srv.server_id}  ! name: {clean_name} | tags: {tag_str}")
 
-    OUTPUT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    log.info("Wrote %d server entries to %s", len(results), OUTPUT_FILE)
+    lines += [
+        "!",
+        "! SECTION teen-flagged",
+        "! Servers from teen-flagged tags — included in teen list only",
+    ]
+
+    for srv in sorted(teen_servers, key=lambda s: s.server_id):
+        tag_str = ", ".join(sorted(srv.tags))
+        clean_name = srv.name.replace("\n", " ").strip() or "unknown"
+        lines.append(f"||server:{srv.server_id}  ! name: {clean_name} | tags: {tag_str}")
+
+    lines.append("! END SCRAPED")
+    return "\n".join(lines)
+
+
+def write_output(hard_servers: list[ScrapedServer], teen_servers: list[ScrapedServer]) -> None:
+    """
+    Write scraped results to sources/scraped-raw.txt.
+    Replaces the existing BEGIN/END block in-place if one exists,
+    otherwise writes a fresh file with the standard header.
+    """
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    scraped_block = build_scraped_block(hard_servers, teen_servers, timestamp)
+
+    existing = OUTPUT_FILE.read_text(encoding="utf-8") if OUTPUT_FILE.exists() else ""
+    begin_marker = "! BEGIN SCRAPED"
+    end_marker = "! END SCRAPED"
+
+    if begin_marker in existing and end_marker in existing:
+        # Replace just the scraped block, preserving anything before/after
+        before = existing[: existing.index(begin_marker)].rstrip("\n")
+        after_end_pos = existing.index(end_marker) + len(end_marker)
+        after = existing[after_end_pos:].lstrip("\n")
+        new_content = before + ("\n" if before else "") + scraped_block + ("\n" + after if after else "\n")
+    else:
+        header = (
+            "# DiscordGuard Scraped Raw Data\n"
+            "# ============================================================\n"
+            "# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.\n"
+            "#\n"
+            "# Regenerate by running: python scripts/scraper.py\n"
+            "# Compile into JSON:     python scripts/compile-lists.py --target <profile>\n"
+            "# ============================================================\n\n"
+        )
+        new_content = header + scraped_block + "\n"
+
+    OUTPUT_FILE.write_text(new_content, encoding="utf-8")
+    log.info(
+        "Wrote %d hard-blocked + %d teen-flagged = %d total servers to %s",
+        len(hard_servers), len(teen_servers), len(hard_servers) + len(teen_servers),
+        OUTPUT_FILE,
+    )
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Scrape Disboard for NSFW/adult servers.")
-    parser.add_argument(
-        "--tags",
-        nargs="+",
-        default=SEARCH_TAGS,
-        help="Disboard tags to search (default: %(default)s)",
-    )
-    parser.add_argument(
-        "--max-pages",
-        type=int,
-        default=MAX_PAGES_PER_TAG,
-        help="Max listing pages to fetch per tag (default: %(default)s)",
-    )
-    args = parser.parse_args()
-
     session = requests.Session()
-    all_results: dict[str, set[str]] = {}
 
-    for tag in args.tags:
-        tag_results = scrape_tag(session, tag, args.max_pages)
-        for sid, tags in tag_results.items():
-            all_results.setdefault(sid, set()).update(tags)
+    # Pass 1: hard-blocked tags → child-safe / family-safe
+    hard_accumulated: dict[str, ScrapedServer] = {}
+    log.info("=== Pass 1: hard-blocked tags ===")
+    for tag in HARD_BLOCKED_TAGS:
+        for srv in scrape_tag(session, tag, MAX_PAGES_PER_TAG):
+            if srv.server_id in hard_accumulated:
+                hard_accumulated[srv.server_id].tags.update(srv.tags)
+            else:
+                hard_accumulated[srv.server_id] = srv
 
-    log.info("Total unique servers scraped: %d", len(all_results))
-    write_output(all_results)
+    # Pass 2: teen-flagged tags → teen list only
+    teen_accumulated: dict[str, ScrapedServer] = {}
+    log.info("=== Pass 2: teen-flagged tags ===")
+    for tag in TEEN_FLAGGED_TAGS:
+        for srv in scrape_tag(session, tag, MAX_PAGES_PER_TAG):
+            if srv.server_id in teen_accumulated:
+                teen_accumulated[srv.server_id].tags.update(srv.tags)
+            else:
+                teen_accumulated[srv.server_id] = srv
+
+    # Servers already in the hard list should not appear separately in teen
+    for sid in hard_accumulated:
+        teen_accumulated.pop(sid, None)
+
+    log.info("Hard-blocked unique servers: %d", len(hard_accumulated))
+    log.info("Teen-flagged unique servers:  %d", len(teen_accumulated))
+
+    write_output(list(hard_accumulated.values()), list(teen_accumulated.values()))
 
 
 if __name__ == "__main__":

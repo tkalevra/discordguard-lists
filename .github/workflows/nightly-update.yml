@@ -1,0 +1,39 @@
+name: Nightly List Update
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 2am UTC nightly
+  workflow_dispatch:      # allow manual trigger from Actions UI
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: python scripts/scraper.py
+
+      - name: Compile lists
+        run: |
+          python scripts/compile-lists.py --target child-safe
+          python scripts/compile-lists.py --target family-safe
+          python scripts/compile-lists.py --target teen
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "discordguard-bot"
+          git config user.email "bot@discordguard"
+          git add lists/ sources/scraped-raw.txt
+          git diff --staged --quiet || git commit -m "chore: nightly list update $(date -u +%Y-%m-%d)"
+          git push
