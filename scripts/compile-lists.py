@@ -19,18 +19,10 @@ Usage:
 
 import json
 import argparse
-import logging
 import re
 import sys
 from datetime import date
 from pathlib import Path
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    stream=sys.stderr,
-)
-log = logging.getLogger(__name__)
 
 REPO_ROOT   = Path(__file__).parent.parent
 SOURCES_DIR = REPO_ROOT / "sources"
@@ -79,7 +71,7 @@ def parse_community(path: Path) -> dict[str, set[str]]:
     }
 
     if not path.exists():
-        log.warning("Community file not found, skipping: %s", path)
+        print(f"[compiler] WARNING: community file not found, skipping: {path}", file=sys.stderr)
         return entries
 
     for lineno, raw_line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
@@ -89,7 +81,6 @@ def parse_community(path: Path) -> dict[str, set[str]]:
 
         m = COMMUNITY_ENTRY_RE.match(line)
         if not m:
-            log.debug("Unrecognised line %d in %s: %r", lineno, path.name, line)
             continue
 
         etype = m.group("type")
@@ -102,9 +93,9 @@ def parse_community(path: Path) -> dict[str, set[str]]:
         elif etype == "keyword":
             entries["keywords"].add(value)
 
-    log.info(
-        "Community: %d servers, %d categories, %d keywords",
-        len(entries["servers"]), len(entries["categories"]), len(entries["keywords"]),
+    print(
+        f"[compiler] community: {len(entries['servers'])} servers, "
+        f"{len(entries['categories'])} categories, {len(entries['keywords'])} keywords"
     )
     return entries
 
@@ -119,7 +110,7 @@ def parse_scraped(path: Path) -> dict[str, set[str]]:
     sections: dict[str, set[str]] = {"hard-blocked": set(), "teen-flagged": set()}
 
     if not path.exists():
-        log.warning("Scraped file not found, skipping: %s", path)
+        print(f"[compiler] WARNING: scraped file not found, skipping: {path}", file=sys.stderr)
         return sections
 
     content = path.read_text(encoding="utf-8")
@@ -127,7 +118,7 @@ def parse_scraped(path: Path) -> dict[str, set[str]]:
     end_pos   = content.find("! END SCRAPED")
 
     if begin_pos == -1 or end_pos == -1:
-        log.warning("No BEGIN/END SCRAPED markers in %s — no scraped servers loaded", path.name)
+        print(f"[compiler] WARNING: no BEGIN/END SCRAPED markers in {path.name} — no scraped servers loaded", file=sys.stderr)
         return sections
 
     block = content[begin_pos: end_pos + len("! END SCRAPED")]
@@ -146,9 +137,9 @@ def parse_scraped(path: Path) -> dict[str, set[str]]:
         if m:
             sections[current_section].add(m.group(1))
 
-    log.info(
-        "Scraped: %d hard-blocked servers, %d teen-flagged servers",
-        len(sections["hard-blocked"]), len(sections["teen-flagged"]),
+    print(
+        f"[compiler] scraped: {len(sections['hard-blocked'])} hard-blocked servers, "
+        f"{len(sections['teen-flagged'])} teen-flagged servers"
     )
     return sections
 
@@ -193,7 +184,7 @@ def bump_patch_version(output_path: Path) -> str:
         if len(parts) == 3:
             return f"{parts[0]}.{parts[1]}.{int(parts[2]) + 1}"
     except Exception as exc:
-        log.warning("Could not parse existing version in %s: %s", output_path.name, exc)
+        print(f"[compiler] WARNING: could not parse existing version in {output_path.name}: {exc}", file=sys.stderr)
     return "1.0.0"
 
 
