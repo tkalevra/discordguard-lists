@@ -6,89 +6,582 @@
 # Compile into JSON:     python scripts/compile-lists.py --target <profile>
 # ============================================================
 ! BEGIN SCRAPED
-! Scraped: 2026-03-06T17:18:02Z
+! Scraped: 2026-03-07T03:43:21Z
 ! Source: disboard.org
-! Tags scraped (hard-blocked): nsfw, adult, 18+, hentai, gore, explicit, porn, lewd, erotic, xxx
-! Tags scraped (teen-flagged): mature, suggestive, dating, relationship
-! Total servers: 74
+! Tags scraped (hard-blocked): nsfw, adult, 18+, hentai, gore, explicit, porn, lewd, erotic, xxx, ai-girlfriend, ai-boyfriend, ai-companion, ai-roleplay, ai-chat, ai-waifu, virtual-girlfriend, virtual-companion, character-ai, replika, ai-romance, ai-dating, ai-relationship, companionship, ai-friend
+! Tags scraped (teen-flagged): mature, suggestive, dating, relationship, artificial-intelligence, ai, chatgpt, claude, llm, generative-ai, ai-generated, ai-art, stable-diffusion, midjourney, ai-tools
+! Total servers: 567
 !
 ! SECTION hard-blocked
 ! Servers from hard-blocked tags — included in child-safe and family-safe lists
-||server:1102688944774197258  ! name: unknown | tags: adult
-||server:1305956327125942413  ! name: unknown | tags: nsfw
-||server:1339142544398745690  ! name: unknown | tags: adult
-||server:1350175866369474630  ! name: unknown | tags: adult
-||server:1350179957267234953  ! name: unknown | tags: nsfw
-||server:1367079171733459017  ! name: unknown | tags: nsfw
-||server:1403516708706193458  ! name: unknown | tags: nsfw
-||server:1422870062494257215  ! name: unknown | tags: nsfw
-||server:1446089518754168834  ! name: unknown | tags: nsfw
-||server:1446106487477764151  ! name: unknown | tags: nsfw
-||server:1446107773057105952  ! name: unknown | tags: nsfw
-||server:1446125247328813068  ! name: unknown | tags: nsfw
-||server:1447090399125704876  ! name: unknown | tags: nsfw
-||server:1447155120683880510  ! name: unknown | tags: nsfw
-||server:1452884725738901506  ! name: unknown | tags: nsfw
-||server:1452889261916553381  ! name: unknown | tags: adult
-||server:1452891462717935631  ! name: unknown | tags: adult, nsfw
-||server:1456096766767140864  ! name: unknown | tags: nsfw
-||server:1457205462540882056  ! name: unknown | tags: adult
-||server:1457205475090108579  ! name: unknown | tags: nsfw
-||server:1459291347050565676  ! name: unknown | tags: adult
-||server:1460336386467954730  ! name: unknown | tags: adult
-||server:1460533884520235021  ! name: unknown | tags: adult
-||server:1460538732502585448  ! name: unknown | tags: adult
-||server:1460546612794490969  ! name: unknown | tags: adult
-||server:1460578001661202442  ! name: unknown | tags: nsfw
-||server:1460676240947286122  ! name: unknown | tags: adult
-||server:1460787050851729604  ! name: unknown | tags: nsfw
-||server:1460798754557788273  ! name: unknown | tags: nsfw
-||server:1460809465631739916  ! name: unknown | tags: adult, nsfw
-||server:1462076859301757127  ! name: unknown | tags: adult
-||server:1462114235692749009  ! name: unknown | tags: adult
-||server:1462116306240405566  ! name: unknown | tags: adult
-||server:1462120895454908470  ! name: unknown | tags: adult
-||server:1462127221597671588  ! name: unknown | tags: adult
-||server:1462153557829751001  ! name: unknown | tags: adult
-||server:1462160007146635337  ! name: unknown | tags: adult
-||server:1462256712416362562  ! name: unknown | tags: nsfw
-||server:1462256908399415337  ! name: unknown | tags: nsfw
-||server:1462256922966102111  ! name: unknown | tags: nsfw
-||server:1462256937847623843  ! name: unknown | tags: nsfw
-||server:1462256956210417718  ! name: unknown | tags: nsfw
-||server:1463218182813651109  ! name: unknown | tags: nsfw
-||server:1468424431855472908  ! name: unknown | tags: nsfw
-||server:1469035212301140171  ! name: unknown | tags: nsfw
-||server:1469083853099499734  ! name: unknown | tags: adult
-||server:1469104738275688678  ! name: unknown | tags: adult
-||server:1469148214908424406  ! name: unknown | tags: adult
-||server:1469152416426364942  ! name: unknown | tags: adult, nsfw
-||server:1469190639584280683  ! name: unknown | tags: nsfw
-||server:1469203440826847254  ! name: unknown | tags: nsfw
-||server:1469227432631337145  ! name: unknown | tags: nsfw
-||server:1469327216679719119  ! name: unknown | tags: nsfw
-||server:1469418302408364055  ! name: unknown | tags: nsfw
-||server:1469421487114027202  ! name: unknown | tags: nsfw
-||server:1469435131298054431  ! name: unknown | tags: nsfw
-||server:1469436014777995431  ! name: unknown | tags: nsfw
-||server:1469463129372098856  ! name: unknown | tags: nsfw
-||server:1469483367862108352  ! name: unknown | tags: nsfw
-||server:1469895853463310369  ! name: unknown | tags: nsfw
-||server:1469907271529140267  ! name: unknown | tags: nsfw
-||server:1471762567285309493  ! name: unknown | tags: nsfw
-||server:1471762856515997716  ! name: unknown | tags: nsfw
-||server:1471772622038499433  ! name: unknown | tags: nsfw
-||server:1471774338020671569  ! name: unknown | tags: nsfw
-||server:1471778384454488117  ! name: unknown | tags: nsfw
-||server:1471786170542461075  ! name: unknown | tags: nsfw
-||server:1472852856573919343  ! name: unknown | tags: nsfw
-||server:1475751217157378111  ! name: unknown | tags: nsfw
-||server:1478528774923489370  ! name: unknown | tags: nsfw
-||server:1478993653262323838  ! name: unknown | tags: nsfw
-||server:1479419147111628902  ! name: unknown | tags: nsfw
-||server:924820482182758410  ! name: unknown | tags: nsfw
-||server:940377335880888320  ! name: unknown | tags: nsfw
+||server:1004711361210753044  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1004713095819706448  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1083459862295486466  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1112881879717261354  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1116601136879779881  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1121424300826705950  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1122421203982893187  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1123245955064541215  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1148279335803961344  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1151528743874068551  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1155506800989311119  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1161369245653925932  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1167945997838721255  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1176671747383242782  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1177511953787256852  ! name: unknown | tags: ai-chat | source_tag: ai_companion
+||server:1183817841019994112  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1191395189315600406  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1196119701210796113  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1201927348929171486  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1201929713493221466  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1204341953081384970  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1210356020296024084  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1213196029256663040  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1215805601159053352  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1224676983917776936  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1233284564152090625  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1236613746839781386  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1247502314403659777  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1248914974508584960  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1248961404107755671  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1258472554843078787  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1265068858918834207  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1269858096201859112  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1270593703588921454  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1270814054960857250  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1293532989250211904  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1295372708946640937  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1295730782685630544  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1295791076652875798  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1299112741604294746  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1303522988393631766  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1305004687921250436  ! name: unknown | tags: ai-chat | source_tag: ai_companion
+||server:1306323893719535687  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1309827755906695278  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1310378100730892339  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1315857412510580786  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1317382327843684393  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1319221775439237120  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1322887739225673819  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1328551717721083967  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1330912678327353374  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1330914925639372890  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1330915342930677791  ! name: unknown | tags: nsfw, xxx | source_tag: nsfw
+||server:1330915937284653079  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1330917060376530954  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1330922943366041672  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1331290590469423104  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1332270942965071882  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1333629739470028890  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1338380531217469452  ! name: unknown | tags: ai-chat | source_tag: ai_companion
+||server:1346007513237295144  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1346913296350973962  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1349709622235365446  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1351498179442511924  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1354542147902111806  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1356166776735662142  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1362176191225921536  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1363926788694347826  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1364591409658724352  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1368383977953427516  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1368683690783408278  ! name: unknown | tags: virtual-companion | source_tag: ai_companion
+||server:1370471107102244974  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1370824396515835904  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1371184540709556304  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1371928579000238220  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1372625099370401955  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1372625986457436300  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1372640717654065312  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1375535780432318576  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1377152341886894150  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1378105901046694059  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1378428911351890011  ! name: unknown | tags: ai-chat, ai-friend | source_tag: ai_companion
+||server:1379486980894625976  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1380619534750453870  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1380623449260560494  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1382544379645919242  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1384268869736071360  ! name: unknown | tags: ai-chat | source_tag: ai_companion
+||server:1387225939569672335  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1387293806809976882  ! name: unknown | tags: companionship | source_tag: ai_companion
+||server:1389276378490208488  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1389987208219590736  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1392134230141702287  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1392138126893256704  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1392143161748623500  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1392150127623540827  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1392152501893206046  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1392158209917325405  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1394993694494560338  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1396655868199702689  ! name: unknown | tags: virtual-girlfriend | source_tag: ai_companion
+||server:1397157017902252113  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1397157634829844582  ! name: unknown | tags: porn, xxx | source_tag: nsfw
+||server:1397159613975236699  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1397160710408245260  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1397678448931246090  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1398294885521559612  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1398811059925815487  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1403957852925591704  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1406133201235214346  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1411392534403616798  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1416011276945195020  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1416483842520383681  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1416731355110178829  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1420698146182271118  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1422718838222622864  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1424673361543565348  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1425088569302581370  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1426591087480406069  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1427366983082573887  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1428527997446520985  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1431526438003281982  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1434308438774513872  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1437861771456151615  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1439769653902839830  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1440602853306794056  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1441836646575116400  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1442091305143635980  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1442124780135256178  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1442861064793489451  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1445823213375586366  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1452743714035470358  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1452800294734790900  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1452995309637603451  ! name: unknown | tags: character-ai | source_tag: ai_companion
+||server:1454840416460603591  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1454941672994771024  ! name: unknown | tags: ai-girlfriend | source_tag: ai_companion
+||server:1455151405500469271  ! name: unknown | tags: ai-roleplay | source_tag: ai_companion
+||server:1455533486311084054  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1456120555404132417  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1456126677582348422  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1456133369330143267  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1456149884234240042  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1456165046416834592  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1456215612266381323  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1456236402315624532  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1456255613033250839  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1456682167508668630  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1456693372478685420  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1456706428218904609  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1456717454406451348  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457205103097417920  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1457205126484988056  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457205462540882056  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1457205468333080770  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1457205475090108579  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457205793144176723  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1457206455861252298  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457206755908911209  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457210172144357500  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457210200326148321  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457210666707587173  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457210786924462202  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1457211136612241504  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1457212304159543452  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1460259233105969337  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1460292632365240488  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1460296377933365516  ! name: unknown | tags: hentai, xxx | source_tag: nsfw
+||server:1460474045764993099  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460476792841175187  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460500941588664473  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460523403554328596  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460530385489494027  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460530804923957314  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460537338806665325  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1460540180061618230  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460550889701113982  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460552603363577901  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460560886724034644  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460563410579095574  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460570965607055458  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460574923549577323  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460576811254677609  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460577154570911859  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460613372583215114  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460732796317335695  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460749390628257929  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1460750663242879133  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1460753366002040857  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1460756029515239617  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460810689043238914  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460812053525827721  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460814860139888641  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460815699533500577  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1460822395727380624  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460828149590790210  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460839538858393795  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1460845643374530612  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1460847233242234966  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1460852738270433460  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1461751339473309861  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1462275300695212251  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462275462729433295  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462275499622666487  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462275723971793097  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462275738429423639  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462275760973811932  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1462276386231287882  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462276492233805939  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462276690855071839  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462277192544161950  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462277795433418813  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462278648844259409  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1462279330066595956  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462279851166797826  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462280091126993090  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462280238246531126  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462280413086089380  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462280489418096703  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1462280600860758231  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1464890719436144683  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1466034734978170895  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1467994260404965387  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1467998686931062851  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1468566608418181173  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1468896080086171660  ! name: unknown | tags: explicit | source_tag: nsfw
+||server:1468985563779432458  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469026623335432202  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469042921520103641  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469043388518240422  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469064761558962363  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469076799177752691  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469082707949781014  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469095147261137058  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469099450482823231  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1469107429512843566  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1469118033174990901  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1469128569421562083  ! name: unknown | tags: adult, nsfw | source_tag: nsfw
+||server:1469132981527380073  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1469138938097565729  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469147200377458864  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1469154326554480713  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1469188290401014045  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469199426672394345  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469199995554234558  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469206021640552552  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469216782710734995  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1469218897403187244  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469227716015292449  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469229136231927852  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469235400059916406  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469240522500735017  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469240805960061108  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469241243446939720  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1469257854237020223  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469292113974919310  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469314320289497281  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469374647022915751  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469377817719476318  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469379268273377310  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469379865437536338  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469381010469687318  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469387669724332260  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469388809681633462  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469391116129538119  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469401525838282957  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469405879471308802  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469413678142197932  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469419160697045240  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469420025554276417  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469431006363910350  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469442078336356498  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469444679039844517  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469449558139338847  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469465431105339405  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469483654001594422  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469485376266571910  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469486238942888011  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469489122111393889  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469499855738245324  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469500137343811598  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469505578341765278  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469677414585073767  ! name: unknown | tags: replika | source_tag: ai_companion
+||server:1469822270389092595  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469835471080263752  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469837184810090588  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469881259260903526  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469907271529140267  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469913882821787817  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469927587345203285  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469969016725442633  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1469991311984689223  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1469999329870876684  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1470040251362971849  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1470791094202663056  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1470792353269944343  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471169451205460070  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1471170714328367268  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1471771186642948158  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471783872210665641  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471789903246524448  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471793096848310346  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471799477974335565  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471809564038008877  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471810740498333788  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471817100094996543  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471829290185261217  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471853042604445746  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471855948606865460  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471858535523549299  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471861131344744460  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471871231954522337  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1471884311434100819  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1471891294941876309  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1472089512225280051  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1472091667682168874  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1472120769357152268  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1473407144110981414  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1473459646420221954  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:1473465689632411830  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1473638428112584829  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1473639211344203852  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1473642987492737158  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1473933091922771978  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1474254584594694177  ! name: unknown | tags: companionship | source_tag: ai_companion
+||server:1475035061765279795  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1475231966432596193  ! name: unknown | tags: xxx | source_tag: nsfw
+||server:1476091718368624650  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1476094849810829436  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1476106820312633456  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1476107547579519107  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:1476392501689716776  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1476505163618320395  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1476999540379881572  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1477020885243269140  ! name: unknown | tags: adult | source_tag: nsfw
+||server:1477563900475215893  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:1478616380507951237  ! name: unknown | tags: 18+ | source_tag: nsfw
+||server:1478660327968346213  ! name: unknown | tags: porn | source_tag: nsfw
+||server:1479666544043626640  ! name: unknown | tags: porn | source_tag: nsfw
+||server:457258830347239425  ! name: unknown | tags: hentai | source_tag: nsfw
+||server:512144250226343945  ! name: unknown | tags: ai-chat | source_tag: ai_companion
+||server:667490117329616896  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:778966932442841088  ! name: unknown | tags: adult, erotic, nsfw | source_tag: nsfw
+||server:812196719084830761  ! name: unknown | tags: porn | source_tag: nsfw
+||server:878873475824107532  ! name: unknown | tags: nsfw | source_tag: nsfw
+||server:906369135666139216  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:952878607250915350  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:988479037380894720  ! name: unknown | tags: erotic | source_tag: nsfw
+||server:992552408012046419  ! name: unknown | tags: 18+ | source_tag: nsfw
 !
 ! SECTION teen-flagged
 ! Servers from teen-flagged tags — included in teen list only
+||server:1009654428254617620  ! name: unknown | tags: ai, artificial-intelligence | source_tag: ai_general
+||server:1035535770322223195  ! name: unknown | tags: stable-diffusion | source_tag: ai_general
+||server:1037660742440194089  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1037720091376238592  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1058002498381676574  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1060949397199925269  ! name: unknown | tags: stable-diffusion | source_tag: ai_general
+||server:1063553506696503457  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1072644554244767785  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1077961146654527518  ! name: unknown | tags: stable-diffusion | source_tag: ai_general
+||server:1085240988504690738  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1087420087172071424  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1093561069689110568  ! name: unknown | tags: generative-ai | source_tag: ai_general
+||server:1095472228692406312  ! name: unknown | tags: midjourney, stable-diffusion | source_tag: ai_general
+||server:1096857973407625317  ! name: unknown | tags: generative-ai, llm | source_tag: ai_general
+||server:1096861156435570813  ! name: unknown | tags: ai-tools, artificial-intelligence | source_tag: ai_general
+||server:1098325767441633361  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1104886076499296256  ! name: unknown | tags: ai-art, stable-diffusion | source_tag: ai_general
+||server:1107029472596738151  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1108397910720258120  ! name: unknown | tags: ai-art, midjourney | source_tag: ai_general
+||server:1146459660770099341  ! name: unknown | tags: ai, ai-art | source_tag: ai_general
+||server:1148097236950069359  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1164569956780888198  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1205754298567495690  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:1234013438192259122  ! name: unknown | tags: suggestive | source_tag: teen_flagged
+||server:1247923369849126972  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1248309623216279686  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:1257145953513902191  ! name: unknown | tags: chatgpt, claude | source_tag: ai_general
+||server:1259486493420949524  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1282399408046215168  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1283779379515752500  ! name: unknown | tags: stable-diffusion | source_tag: ai_general
+||server:1283871875327328296  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1290149746891165769  ! name: unknown | tags: claude, stable-diffusion | source_tag: ai_general
+||server:1290288815789047851  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1295540615265648741  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1299450164485816402  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1300569154167902240  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1304166361337041038  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1309278141088399420  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1310549356922933280  ! name: unknown | tags: ai-art, chatgpt | source_tag: ai_general
+||server:1310776903644221490  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1311631228453130250  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1311993293739130890  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1316134888533000273  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1319485104300753037  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1322223641043271701  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1329545428831572080  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1331860974709248021  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1334943714094612563  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1338474667513614409  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1338599075192508467  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1339329215274946642  ! name: unknown | tags: ai-art, artificial-intelligence | source_tag: ai_general
+||server:1343044164387999756  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1345128677809193021  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1346373539166556211  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1347043529456877589  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1356982086308724789  ! name: unknown | tags: chatgpt, llm | source_tag: ai_general
+||server:1357370695323091074  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1357993133610111027  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:1358081597349560371  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1358139161181294662  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1358463231122739343  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1359526055337263255  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1360266212407382238  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1363435820488589412  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1364310690046939197  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1364583901044932658  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1365028497398960249  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:1367491500136468550  ! name: unknown | tags: generative-ai | source_tag: ai_general
+||server:1367772592672473128  ! name: unknown | tags: generative-ai, midjourney | source_tag: ai_general
+||server:1369279373991088148  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1369465755208388700  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1370080259122270268  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1370671030313422908  ! name: unknown | tags: generative-ai | source_tag: ai_general
+||server:1372259198208970892  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1374659304938012682  ! name: unknown | tags: ai-art, stable-diffusion | source_tag: ai_general
+||server:1375804012288278618  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1384210439730106408  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1384679282437128302  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1384679595692789790  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1386900074986213558  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1387455654691864576  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1388836558634746056  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1389367373412175922  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1392152076632719462  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1392469663191138325  ! name: unknown | tags: generative-ai | source_tag: ai_general
+||server:1393295470998061176  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1393384221363539998  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1393540992472322168  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1393691005353459722  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1393755207485227128  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1395465038076313772  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1397054754328285255  ! name: unknown | tags: ai, ai-art | source_tag: ai_general
+||server:1399390658375979048  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1400422820521054248  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1403753228394430605  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1404146453508653227  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1404314654506750012  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1405910468131819700  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1406701756129349733  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1409224655830646915  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1409460000111202316  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1409625387960504382  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1410703721217658964  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1412595191612702842  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1412813539738910811  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1412833136508670075  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1413485700484956212  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1413798844755345552  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1414232647017693206  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:1415224706377846848  ! name: unknown | tags: generative-ai | source_tag: ai_general
+||server:1417103052594352163  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1419732300211421254  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1420142770659786754  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1421293144288530565  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1421428684975247432  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1422051899724533833  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1422498020888416278  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1422753807179190405  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1424756276914552968  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1425580717072580658  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1426359923121328228  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1428293038169657387  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1430378945173524491  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1431612953668354050  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1434954968137203792  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1438294975174541554  ! name: unknown | tags: chatgpt, claude | source_tag: ai_general
+||server:1439459963402453044  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1441391054459768874  ! name: unknown | tags: stable-diffusion | source_tag: ai_general
+||server:1442896741828661359  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1443146531602567250  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1450432255183949888  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1451346173443969056  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1452518673280405718  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1452720596684247124  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1452868774528286874  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1453106845068562556  ! name: unknown | tags: chatgpt, claude | source_tag: ai_general
+||server:1453285421877297227  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1455276340906295523  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1456255124325400589  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1456258485472727112  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1456336143368065249  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1457099438890811568  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1457204830719311987  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1457204891989573664  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1457204957789818893  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1457205175377989726  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1457210787880767639  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1457269527455993991  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1459263966307160310  ! name: unknown | tags: ai-art, artificial-intelligence | source_tag: ai_general
+||server:1459558253972422759  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1460136883211210785  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1460625292677873772  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1460632136859255023  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1460754124831457356  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1460755649049919806  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1461209488236482715  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1461555807731585158  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1462106320730718485  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1462284190912352258  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1462285133913653396  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1462285295247687793  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1462425442043826240  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1465022836119965784  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1465727905005965383  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1466260031476600844  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1466260354274164884  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1466790850901053613  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1466854413703315592  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1467066815153832110  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1468429663708905495  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:1468789428381159497  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1469249454027706564  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1471331530302296129  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1471543127658467343  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1472017854722347142  ! name: unknown | tags: suggestive | source_tag: teen_flagged
+||server:1472187735275077786  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1473203743993364596  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:1473726854266360022  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1474110056328073226  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1474175317634584888  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1474762175514939472  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:1475506403413069936  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:1475732742225526825  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:1475758261440348243  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1476099839430234153  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1476372076939182151  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1477068836082815147  ! name: unknown | tags: llm | source_tag: ai_general
+||server:1477767189334462597  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1478233476988797010  ! name: unknown | tags: dating, relationship | source_tag: teen_flagged
+||server:1478251410641653802  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1478599060863582291  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1478669858974732329  ! name: unknown | tags: dating | source_tag: teen_flagged
+||server:1478752607634722828  ! name: unknown | tags: claude | source_tag: ai_general
+||server:1478835908257255468  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1479097744831418398  ! name: unknown | tags: ai | source_tag: ai_general
+||server:1479300972374265906  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1479616574301278249  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:1479668431937732740  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:167811324590424065  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:507742418150359095  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:637568002996305921  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:702357980779380837  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:751357848428216360  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:785905506027962388  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:790891656118796309  ! name: unknown | tags: artificial-intelligence | source_tag: ai_general
+||server:794684213697052712  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:796214858172596225  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:824796850955354172  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:832272003863805952  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:840296164812259348  ! name: unknown | tags: ai | source_tag: ai_general
+||server:840862506821877770  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:86035828106600448  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:910720729107034213  ! name: unknown | tags: relationship | source_tag: teen_flagged
+||server:933601553531695135  ! name: unknown | tags: ai, artificial-intelligence | source_tag: ai_general
+||server:947994319795675267  ! name: unknown | tags: midjourney | source_tag: ai_general
+||server:948517879756759051  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:951108105398255706  ! name: unknown | tags: ai-tools | source_tag: ai_general
+||server:979379784519909416  ! name: unknown | tags: mature | source_tag: teen_flagged
+||server:985772737102512128  ! name: unknown | tags: chatgpt | source_tag: ai_general
+||server:986377323395829770  ! name: unknown | tags: ai-art | source_tag: ai_general
+||server:995258321768558602  ! name: unknown | tags: midjourney | source_tag: ai_general
 ! END SCRAPED
