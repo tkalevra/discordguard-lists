@@ -1,0 +1,209 @@
+# ============================================================
+# tkalevra/adguard-lists - child-safe-blocklist.txt
+# Purpose: Adult content + misc DNS blocking for Des & Gabby
+# Format: AdGuard Home adblock-style syntax
+# Last updated: 2026-03-11
+# ============================================================
+# To use: AdGuard Home > Filters > DNS Blocklists > Add blocklist
+# Raw URL: https://raw.githubusercontent.com/tkalevra/adguard-lists/main/child-safe-blocklist.txt
+# ============================================================
+
+# --- Internet Archive / Wayback Machine ---
+||archive.org^
+||web.archive.org^
+||archive.ph^
+||archive.today^
+||archive.is^
+||archive.fo^
+||archive.li^
+||archive.md^
+||cachedview.nl^
+||timetravel.mementoweb.org^
+
+# --- Major Porn Platforms ---
+||pornhub.com^
+||xvideos.com^
+||xhamster.com^
+||xnxx.com^
+||redtube.com^
+||youporn.com^
+||tube8.com^
+||spankbang.com^
+||beeg.com^
+||tnaflix.com^
+||txxx.com^
+||hclips.com^
+||hdzog.com^
+||sunporno.com^
+||drtuber.com^
+||hardsextube.com^
+||4tube.com^
+||fux.com^
+||porndig.com^
+||fuq.com^
+||hdtube.porn^
+||nuvid.com^
+||alphaporno.com^
+||pornoxo.com^
+||tubeon.com^
+||sexvid.xxx^
+||cliphunter.com^
+||slutload.com^
+||yobt.tv^
+||eporner.com^
+||ok.xxx^
+||definebabe.com^
+||sexu.com^
+||vporn.com^
+||pornhat.com^
+||gotporn.com^
+||pornid.xxx^
+||proporn.com^
+||jizzbunker.com^
+||cam4.com^
+||chaturbate.com^
+||stripchat.com^
+||bongacams.com^
+||myfreecams.com^
+||livejasmin.com^
+||camsoda.com^
+||streamate.com^
+||flirt4free.com^
+||imlive.com^
+||jasmin.com^
+||sexier.com^
+||onlyfans.com^
+||fansly.com^
+||manyvids.com^
+||clips4sale.com^
+||naughtyamerica.com^
+||brazzers.com^
+||bangbros.com^
+||reality kings.com^
+||realitykings.com^
+||mofos.com^
+||tushy.com^
+||vixen.com^
+||blacked.com^
+||deeper.com^
+||slayed.com^
+||wicked.com^
+||digitalplayground.com^
+||vivid.com^
+||penthouse.com^
+||playboy.com^
+||hustler.com^
+||adultdvdempire.com^
+||aebn.com^
+||gamelink.com^
+
+# --- Reddit (NSFW) - block entire domain ---
+||reddit.com^
+||redd.it^
+||redditstatic.com^
+||redditmedia.com^
+||i.redd.it^
+
+# --- AI Companion / Roleplay (adult-adjacent) ---
+||joyland.ai^
+||character.ai^
+||crushon.ai^
+||candy.ai^
+||replika.com^
+||eva.ai^
+||romantic.ai^
+||anima.app^
+||kindroid.ai^
+||nastia.ai^
+||muah.ai^
+||spicychat.ai^
+||janitorai.com^
+||pygmalion.chat^
+||venus.chub.ai^
+||chub.ai^
+
+# --- Hentai / Animated Adult Content ---
+||hentaihaven.xxx^
+||hanime.tv^
+||nhentai.net^
+||hentai2read.com^
+||fakku.net^
+||tsumino.com^
+||hentaifox.com^
+||luscious.net^
+||simply-hentai.com^
+||hentaistream.com^
+||hentaiplay.net^
+||animeidhentai.com^
+||hentai-moon.com^
+
+# --- Adult Image / Escort / Dating (adult) ---
+||xart.com^
+||hegre.com^
+||met-art.com^
+||thelifeerotic.com^
+||domai.com^
+||atkgirlfriends.com^
+||atkpremium.com^
+||backpage.com^
+||adultsearch.com^
+||eros.com^
+||escortalligator.com^
+||listcrawler.com^
+||rubmaps.com^
+||skipthegames.com^
+||bedpage.com^
+||yesbackpage.com^
+||humaniplex.com^
+
+# --- Adult Social / Forums ---
+||xhamsterlive.com^
+||literotica.com^
+||sexstories.com^
+||asstr.org^
+||storiesonline.net^
+||sexstory.com^
+||adultfanfiction.net^
+||hentai-foundry.com^
+
+# --- VPN / Proxy Services (circumvention) ---
+||protonvpn.com^
+||nordvpn.com^
+||expressvpn.com^
+||surfshark.com^
+||privateinternetaccess.com^
+||ipvanish.com^
+||cyberghostvpn.com^
+||tunnelbear.com^
+||windscribe.com^
+||mullvad.net^
+||hotspotshield.com^
+||zenmate.com^
+||hidemyass.com^
+||hide.me^
+||vpnunlimited.com^
+||ultrasurf.us^
+||psiphon.ca^
+||lantern.io^
+||tor2web.org^
+||onion.to^
+||onion.ws^
+||onion.cab^
+||onion.pet^
+
+# --- Web Proxies / Bypass Sites ---
+||croxyproxy.com^
+||croxyproxy.net^
+||proxysite.com^
+||4everproxy.com^
+||hidester.com^
+||kproxy.com^
+||zendproxy.com^
+||filterbypass.me^
+||unblocksites.co^
+||unblockweb.us^
+||proxfree.com^
+||anonymouse.org^
+||whoer.net^
+
+# --- END OF LIST ---
